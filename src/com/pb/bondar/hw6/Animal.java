@@ -36,7 +36,6 @@ public class Animal {
         System.out.println(name + " Шумит");
     }
     public void eat(){
-        //System.out.println(name + " Кушает...");
         System.out.println(name + " Жует");
     }
     public void sleep(){
