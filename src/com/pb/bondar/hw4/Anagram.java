@@ -13,8 +13,7 @@ public class Anagram {
         String fra1= izmenenie(fraza1);
         String fra2= izmenenie(fraza2);
 
-//        System.out.println(fra1);
-//        System.out.println(fra2);
+
 
         srawnenie(fra1,fra2);
 

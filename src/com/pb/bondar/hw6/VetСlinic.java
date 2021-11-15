@@ -3,6 +3,7 @@ package com.pb.bondar.hw6;
 import com.sun.org.apache.bcel.internal.classfile.ClassFormatException;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
 public class VetСlinic {
     public static void main(String[] args) throws Exception{
@@ -33,21 +34,31 @@ public class VetСlinic {
         horse1.setName(animals3.getName()+" Uragan");
         horse1.setFood("Appal");
 
-            Class animClazz = Class.forName("com.pb.bondar.hw6.Veterinarian");
-            Constructor constr = animClazz.getConstructor(new Class[]{});
-            Object obj = constr.newInstance();
-            if (obj instanceof Veterinarian){
-                ((Veterinarian) obj).treatAnimal(animals1);
-                ((Veterinarian) obj).treatAnimal(animals2);
-                ((Veterinarian) obj).treatAnimal(animals3);
-            }
-
+        Animal [] priym = new Animal[] {animals1,animals2,animals3};
         Animal [] anim = new Animal[] {dog1,cat1,horse1};
+        int k=0;
         for(Animal a: anim){
+            for(int i=k;i< priym.length;i++){
+                Class animClazz = Class.forName("com.pb.bondar.hw6.Veterinarian");
+                Constructor constr = animClazz.getConstructor(new Class[]{});
+                Object obj = animClazz.newInstance();
+//                Method []c = animClazz.getDeclaredMethods();
+//                for (Method m : c){
+//                    String mname = m.getName();
+//
+//                }
+                if (obj instanceof Veterinarian){
+                    ((Veterinarian) obj).treatAnimal(priym[i]);
+                }
+                break;
+            }
+            k++;
             System.out.println("на прием к ветеринару отправляется: " + a.getName());
             System.out.println(a.getName() + " вышел(a)..." );
+
+        }
         }
 
 
     }
-}
+

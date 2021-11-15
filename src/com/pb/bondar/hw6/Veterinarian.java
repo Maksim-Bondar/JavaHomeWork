@@ -5,8 +5,8 @@ import com.pb.bondar.hw3.Array;
 import java.util.Arrays;
 
 public class Veterinarian {
-    public Veterinarian(){}
-    void treatAnimal(Animal animal){
+    private Veterinarian(){}
+     void treatAnimal(Animal animal){
         System.out.println("на прием пришел: " + animal);
     }
 }
